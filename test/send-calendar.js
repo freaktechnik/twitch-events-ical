@@ -5,7 +5,7 @@ import sinon from 'sinon';
 const mockResponse = () => ({
     send: sinon.spy(),
     type: sinon.spy(),
-    sendStatus: sinon.spy()
+    status: sinon.spy()
 });
 
 test('Correctly get', async (t) => {
@@ -16,6 +16,7 @@ test('Correctly get', async (t) => {
     await sendCalendar(cal, res);
     t.true(res.send.calledWith(content));
     t.true(res.type.calledWith('text/calendar'));
+    t.true(res.type.calledBefore(res.send));
 });
 
 test('Fail get', async (t) => {
@@ -25,6 +26,7 @@ test('Fail get', async (t) => {
 
     await sendCalendar(cal, res);
     t.true(res.send.calledWith(error));
-    t.true(res.sendStatus.calledWith(500));
+    t.true(res.status.calledWith(500));
+    t.true(res.status.calledBefore(res.send));
     t.false(res.type.called);
 });

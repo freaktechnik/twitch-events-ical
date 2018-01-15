@@ -1,0 +1,31 @@
+{
+  "name": "twitch-events-ical",
+  "version": "1.0.0",
+  "description": "Generate an ical feed from twitch events",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freaktechnik/twitch-events-ical.git"
+  },
+  "keywords": [
+    "twitch",
+    "ical",
+    "events",
+    "calendar",
+    "stream"
+  ],
+  "author": "Martin Giger (https://humanoids.be)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/freaktechnik/twitch-events-ical/issues"
+  },
+  "homepage": "https://github.com/freaktechnik/twitch-events-ical#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "immutable-ics": "^0.4.0",
+    "twitch": "^0.12.1"
+  }
+}

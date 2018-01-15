@@ -13,8 +13,8 @@ Env vars:
 
 ## Routes
 
- - `/channel/:channelId`
- - `/following/:userId`
+ - [`/channel/:channelId`](https://twitch-events-ical.herokuapp.com/channel/channelId)
+ - [`/following/:userId`](https://twitch-events-ical.herokuapp.com/following/userId)
 
 ## License
 [MIT](./LICENSE)

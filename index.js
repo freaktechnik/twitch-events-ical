@@ -4,6 +4,7 @@ const express = require("express"),
     bodyParser = require("body-parser"),
     Controller = require("./lib"),
     sendCalendar = require("./lib/send-calendar"),
+    SEE_ALSO = 303,
     DEFAULT_PORT = 5000,
     PORT = process.env.PORT || DEFAULT_PORT,
     app = express();
@@ -45,7 +46,7 @@ app.route('/')
         const type = req.body.submit,
             username = req.body.username;
         Controller.getUserId(username).then((id) => {
-            res.status(303)
+            res.status(SEE_ALSO);
             res.append('Location', `/${type}/${id}`);
             res.end();
         })

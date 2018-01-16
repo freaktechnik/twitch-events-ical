@@ -27,6 +27,7 @@
   "dependencies": {
     "express": "^4.16.2",
     "immutable-ics": "^0.4.0",
+    "redis": "^2.8.0",
     "twitch": "^0.12.3"
   },
   "engines": {

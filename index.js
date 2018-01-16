@@ -10,7 +10,7 @@ const express = require("express"),
     render = (link = '') => {
         let more = '';
         if(link) {
-            more = `<p>Calendar URL: <a href="https://${process.env.HEROKU_APP_NAME}.herokuapp.com${link}">https://${process.env.HEROKU_APP_NAME}.herokuapp.com${link}</a></p>`;
+            more = `<p>Calendar URL: <a href="https://${process.env.HEROKU_APP_NAME}.herokuapp.com/${link}">https://${process.env.HEROKU_APP_NAME}.herokuapp.com/${link}</a></p>`;
         }
         return `<!DOCTYPE html>
 <html lang="en">

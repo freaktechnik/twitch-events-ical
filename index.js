@@ -1,11 +1,14 @@
 "use strict";
 
 const express = require("express"),
+    bodyParser = require("body-parser"),
     Controller = require("./lib"),
     sendCalendar = require("./lib/send-calendar"),
     DEFAULT_PORT = 5000,
     PORT = process.env.PORT || DEFAULT_PORT,
     app = express();
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/channel/:channelId', (req, res) => {
     sendCalendar(Controller.getChannelCalendar(req.params.channelId), res);
@@ -25,9 +28,11 @@ app.route('/')
     <main>
         <h1>Get iCal for</h1>
         <form method="post" action="">
-            <input type="text" name="username" placeholder="Username">
-            <button type="submit" name="submit" value="channel">Channel Events</button>
-            <button type="submit" name="submit" value="following">Following Channels Events</button>
+            <p><input type="text" name="username" placeholder="Username"></p>
+            <p>
+                <button type="submit" name="submit" value="channel">Channel Events</button>
+                <button type="submit" name="submit" value="following">Following Channels Events</button>
+            </p>
         </form>
     </main>
     <footer>
@@ -37,8 +42,8 @@ app.route('/')
 </html>`);
     })
     .post((req, res) => {
-        const type = req.param('submit'),
-            username = req.param('username');
+        const type = req.body.submit,
+            username = req.body.username;
         Controller.getUserId(username).then((id) => {
             res.append('Location', `/${type}/${id}`);
             res.end();

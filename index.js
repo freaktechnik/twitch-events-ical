@@ -46,9 +46,19 @@ app.route('/')
         const type = req.body.submit,
             username = req.body.username;
         Controller.getUserId(username).then((id) => {
+            const link = `/${type}/${id}`;
             res.status(SEE_ALSO);
-            res.append('Location', `/${type}/${id}`);
-            res.end();
+            res.append('Location', link);
+            res.send(`<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>${type} calendar for ${username}</title>
+</head>
+<body>
+    <p>Calendar URL: <a href="https://twitch-events-ical.herokuapp.com${link}">https://twitch-events-ical.herokuapp.com${link}</a></p>
+</body>
+</html>`);
         })
             .catch(console.error);
     });

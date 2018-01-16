@@ -10,6 +10,8 @@ Env vars:
 
  - `PORT`: Port to expose service on
  - `CLIENT_ID`: Twitch Client-ID
+ - `REDIS_URL`: URL to redis (used for caching)
+ - `HEROKU_APP_NAME`: name of the heroku app 
 
 ## Routes
 

@@ -45,6 +45,7 @@ app.route('/')
         const type = req.body.submit,
             username = req.body.username;
         Controller.getUserId(username).then((id) => {
+            res.status(303)
             res.append('Location', `/${type}/${id}`);
             res.end();
         })

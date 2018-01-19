@@ -1,0 +1,30 @@
+{
+    "name": "Twitch Events iCal Generator",
+    "description": "Generates ics files for upcoming events of a single user or for all followed channels of a user.",
+    "keywords": [
+        "twitch",
+        "events",
+        "ical"
+    ],
+    "repository": "https://github.com/freaktechnik/twitch-events-ical",
+    "success_url": "/",
+    "env": {
+        "CLIENT_ID": {
+            "description": "Twitch API Client ID",
+            "required": true
+        },
+        "HEROKU_APP_NAME": {
+            "required": true
+        }
+    },
+    "addons": [
+        "heroku-redis:hobby-dev"
+    ],
+    "image": "heroku/nodejs",
+    "formation": {
+        "web": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}

@@ -8,12 +8,14 @@ Generates ical files for channels and followed channels of a user.
 ## Run
 `node index.js`
 
-Env vars:
+Or [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+### Env vars:
 
  - `PORT`: Port to expose service on
  - `CLIENT_ID`: Twitch Client-ID
  - `REDIS_URL`: URL to redis (used for caching)
- - `HEROKU_APP_NAME`: name of the heroku app 
+ - `HEROKU_APP_NAME`: Name of the heroku app
 
 ## Routes
 

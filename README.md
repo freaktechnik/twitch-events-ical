@@ -19,6 +19,7 @@ Or [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/d
 
 ## Routes
 
+ - [`/`](https://twitch-events-ical.herokuapp.com)
  - [`/channel/:channelId`](https://twitch-events-ical.herokuapp.com/channel/channelId)
  - [`/following/:userId`](https://twitch-events-ical.herokuapp.com/following/userId)
 

@@ -56,10 +56,7 @@ app.get('/channel/:channelId', async (req, res) => {
     sendCalendar(Controller.getChannelCalendar(req.params.channelId), res);
 });
 app.get('/following/:userId', async (req, res) => {
-    await cache.setCacheHeaders(res, cache.getKey(req.params.userId, cachereq.setHeader('Content-Security-Policy', CSP);
-        req.setHeader('X-Frame-Options', 'SAMEORIGIN');
-        req.setHeader('X-XSS-Protection', '1; mode=block');
-        req.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');.CACHE_FOLLOWS));
+    await cache.setCacheHeaders(res, cache.getKey(req.params.userId, cache.CACHE_FOLLOWS));
     sendCalendar(Controller.getFollowsCalendar(req.params.userId), res);
 });
 app.route('/')

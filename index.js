@@ -30,7 +30,7 @@ const express = require("express"),
     <main>
         <h1>Get iCal for</h1>
         <form method="post" action="">
-            <p><input type="text" name="username" placeholder="Username"></p>
+            <p><input type="text" name="username" placeholder="Username" required></p>
             <p>
                 <button type="submit" name="submit" value="channel">Channel Events</button>
                 <button type="submit" name="submit" value="following">Following Channels Events</button>

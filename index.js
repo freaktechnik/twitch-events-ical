@@ -52,11 +52,11 @@ app.use((req, res, next) => {
 });
 
 app.get('/channel/:channelId', async (req, res) => {
-    await cache.setCacheHeaders(res, cache.getKey(req.params.channelId, cache.CACHE_CHANNEL));
+    await cache.setCacheHeaders(res, cache.buildKey(req.params.channelId, cache.CACHE_CHANNEL));
     sendCalendar(Controller.getChannelCalendar(req.params.channelId), res);
 });
 app.get('/following/:userId', async (req, res) => {
-    await cache.setCacheHeaders(res, cache.getKey(req.params.userId, cache.CACHE_FOLLOWS));
+    await cache.setCacheHeaders(res, cache.buildKey(req.params.userId, cache.CACHE_FOLLOWS));
     sendCalendar(Controller.getFollowsCalendar(req.params.userId), res);
 });
 app.route('/')

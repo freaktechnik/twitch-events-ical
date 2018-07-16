@@ -36,10 +36,10 @@
     "node": ">= 9.0.0"
   },
   "devDependencies": {
-    "@freaktechnik/eslint-config-node": "^6.4.0",
-    "@freaktechnik/eslint-config-test": "^6.4.0",
+    "@freaktechnik/eslint-config-node": "^6.4.4",
+    "@freaktechnik/eslint-config-test": "^6.4.4",
     "ava": "^0.25.0",
-    "eslint": "^4.19.1",
-    "sinon": "^6.0.0"
+    "eslint": "^5.1.0",
+    "sinon": "^6.1.3"
   }
 }

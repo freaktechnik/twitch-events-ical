@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint index.js lib/ test/",
-    "test": "npm run lint && ava"
+    "test": "npm run lint && ava",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

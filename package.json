@@ -34,7 +34,7 @@
     "twitch": "^1.0.0"
   },
   "engines": {
-    "node": ">= 9.0.0"
+    "node": ">= 10.3.0"
   },
   "devDependencies": {
     "@freaktechnik/eslint-config-node": "^6.4.4",

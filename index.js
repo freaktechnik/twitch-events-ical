@@ -15,10 +15,11 @@ const express = require("express"),
         res.setHeader('X-XSS-Protection', '1; mode=block');
         res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
     },
+    makeUrl = (link) => `https://${process.env.HEROKU_APP_NAME}.herokuapp.com${link}`,
     render = (link = '') => {
         let more = '';
         if(link) {
-            more = `<p>Calendar URL: <a href="https://${process.env.HEROKU_APP_NAME}.herokuapp.com/${link}" rel="noopener">https://${process.env.HEROKU_APP_NAME}.herokuapp.com/${link}</a></p>`;
+            more = `<p>Calendar URL: <a href="${makeUrl(link)}" rel="noopener">${makeUrl(link)}</a></p>`;
         }
         return `<!DOCTYPE html>
 <html lang="en">
@@ -53,11 +54,11 @@ app.use((req, res, next) => {
 
 app.get('/channel/:channelId', async (req, res) => {
     await cache.setCacheHeaders(res, cache.buildKey(req.params.channelId, cache.CACHE_CHANNEL));
-    sendCalendar(Controller.getChannelCalendar(req.params.channelId), res);
+    sendCalendar(Controller.getChannelCalendar(req.params.channelId, makeUrl(req.originalUrl)), res);
 });
 app.get('/following/:userId', async (req, res) => {
     await cache.setCacheHeaders(res, cache.buildKey(req.params.userId, cache.CACHE_FOLLOWS));
-    sendCalendar(Controller.getFollowsCalendar(req.params.userId), res);
+    sendCalendar(Controller.getFollowsCalendar(req.params.userId, makeUrl(req.originalUrl)), res);
 });
 app.route('/')
     .get((req, res) => {
@@ -71,6 +72,6 @@ app.route('/')
         const type = req.body.submit,
             { username } = req.body,
             id = await Controller.getUserId(username);
-        res.send(render(`${type}/${id}`));
+        res.send(render(`/${type}/${id}`));
     });
 app.listen(PORT);

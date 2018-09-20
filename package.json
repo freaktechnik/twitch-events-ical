@@ -41,6 +41,6 @@
     "@freaktechnik/eslint-config-test": "^6.4.4",
     "ava": "^0.25.0",
     "eslint": "^5.6.0",
-    "sinon": "^6.3.3"
+    "sinon": "^6.3.4"
   }
 }

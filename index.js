@@ -15,11 +15,11 @@ const express = require("express"),
         res.setHeader('X-XSS-Protection', '1; mode=block');
         res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
     },
-    makeUrl = (link) => `https://${process.env.HEROKU_APP_NAME}.herokuapp.com${link}`,
+    makeUrl = (link, protocol = 'https') => `${protocol}://${process.env.HEROKU_APP_NAME}.herokuapp.com${link}`,
     render = (link = '') => {
         let more = '';
         if(link) {
-            more = `<p>Calendar URL: <a href="${makeUrl(link)}" rel="noopener">${makeUrl(link)}</a></p>`;
+            more = `<p>Calendar URL: <a href="${makeUrl(link)}" rel="noopener">${makeUrl(link)}</a> (<a href="${makeUrl(url, 'webcal')}">subscribe</a>)</p>`;
         }
         return `<!DOCTYPE html>
 <html lang="en">

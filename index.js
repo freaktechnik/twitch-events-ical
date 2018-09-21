@@ -19,7 +19,7 @@ const express = require("express"),
     render = (link = '') => {
         let more = '';
         if(link) {
-            more = `<p>Calendar URL: <a href="${makeUrl(link)}" rel="noopener">${makeUrl(link)}</a> (<a href="${makeUrl(url, 'webcal')}">subscribe</a>)</p>`;
+            more = `<p>Calendar URL: <a href="${makeUrl(link)}" rel="noopener">${makeUrl(link)}</a> (<a href="${makeUrl(link, 'webcal')}">subscribe</a>)</p>`;
         }
         return `<!DOCTYPE html>
 <html lang="en">

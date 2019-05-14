@@ -25,7 +25,11 @@
     "addons": [
         "heroku-redis:hobby-dev"
     ],
-    "image": "heroku/nodejs",
+    "buildpacks": [
+        {
+            "url": "heroku/nodejs"
+        }
+    ],
     "formation": {
         "web": {
             "quantity": 1,

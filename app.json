@@ -15,7 +15,7 @@
         },
         "CLIENT_SECRET": {
             "description": "Twitch API Client secret",
-            "required": "true"
+            "required": true
         },
         "HEROKU_APP_NAME": {
             "description": "Heroku app subdomain slug",

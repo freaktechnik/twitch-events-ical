@@ -20,7 +20,8 @@
         "HEROKU_APP_NAME": {
             "description": "Heroku app subdomain slug",
             "required": true
-        }
+        },
+        "NPM_CONFIG_PRODUCTION": true
     },
     "addons": [
         "heroku-redis:hobby-dev"

@@ -11,6 +11,8 @@ Generates ical files for channels and followed channels of a user.
 
 Or [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
+After deploying, you need to configure the scheduler add-on to run the "cron" job once every hour.
+
 ### Env vars
 
 - `PORT`: Port to expose service on

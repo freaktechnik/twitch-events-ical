@@ -24,7 +24,11 @@
         "NPM_CONFIG_PRODUCTION": true
     },
     "addons": [
-        "heroku-redis:hobby-dev"
+        "heroku-redis:hobby-dev",
+        {
+            "plan": "scheduler:standard"
+
+        }
     ],
     "buildpacks": [
         {

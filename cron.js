@@ -15,7 +15,7 @@ Promise.all([
     ]) => {
         const following = {};
         for(const userId of follows) {
-            const followsRequest = client.helix.users.getFollows({
+            const followsRequest = client.helix.users.getFollowsPaginated({
                 user: userId
             });
             following[userId] = [];

@@ -26,21 +26,21 @@
   },
   "homepage": "https://github.com/freaktechnik/twitch-events-ical#readme",
   "dependencies": {
-    "bluebird": "^3.5.4",
+    "bluebird": "^3.7.0",
     "body-parser": "^1.19.0",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "immutable-ics": "^0.4.0",
     "redis": "^2.8.0",
-    "twitch": "^2.2.3"
+    "twitch": "^3.5.5"
   },
   "engines": {
     "node": ">= 10.3.0"
   },
   "devDependencies": {
-    "@freaktechnik/eslint-config-node": "^6.6.2",
-    "@freaktechnik/eslint-config-test": "^6.6.2",
-    "ava": "^2.0.0",
-    "eslint": "^5.16.0",
-    "sinon": "^7.3.2"
+    "@freaktechnik/eslint-config-node": "^7.0.0",
+    "@freaktechnik/eslint-config-test": "^7.0.0",
+    "ava": "^2.4.0",
+    "eslint": "^6.5.1",
+    "sinon": "^7.5.0"
   }
 }

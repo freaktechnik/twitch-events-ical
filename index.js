@@ -47,31 +47,31 @@ const express = require("express"),
     };
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use((req, res, next) => {
-    res.setHeader('X-Content-Type-Options', 'nosniff');
+app.use((request, response, next) => {
+    response.setHeader('X-Content-Type-Options', 'nosniff');
     next();
 });
 
-app.get('/channel/:channelId', async (req, res) => {
-    await cache.setCacheHeaders(res, cache.buildKey(req.params.channelId, cache.CACHE_CHANNEL));
-    sendCalendar(Controller.getChannelCalendar(req.params.channelId, makeUrl(req.originalUrl)), res);
+app.get('/channel/:channelId', async (request, response) => {
+    await cache.setCacheHeaders(response, cache.buildKey(request.params.channelId, cache.CACHE_CHANNEL));
+    sendCalendar(Controller.getChannelCalendar(request.params.channelId, makeUrl(request.originalUrl)), response);
 });
-app.get('/following/:userId', async (req, res) => {
-    await cache.setCacheHeaders(res, cache.buildKey(req.params.userId, cache.CACHE_FOLLOWS));
-    sendCalendar(Controller.getFollowsCalendar(req.params.userId, makeUrl(req.originalUrl)), res);
+app.get('/following/:userId', async (request, response) => {
+    await cache.setCacheHeaders(response, cache.buildKey(request.params.userId, cache.CACHE_FOLLOWS));
+    sendCalendar(Controller.getFollowsCalendar(request.params.userId, makeUrl(request.originalUrl)), response);
 });
 app.route('/')
-    .get((req, res) => {
-        res.setHeader('Cache-Control', 'public, max-age=3600');
-        setHeaders(res);
-        res.send(render());
+    .get((request, response) => {
+        response.setHeader('Cache-Control', 'public, max-age=3600');
+        setHeaders(response);
+        response.send(render());
     })
-    .post(async (req, res) => {
-        res.setHeader('Cache-Control', `private, no-cache, no-store, must-revalidate`);
-        setHeaders(res);
-        const type = req.body.submit,
-            { username } = req.body,
+    .post(async (request, response) => {
+        response.setHeader('Cache-Control', `private, no-cache, no-store, must-revalidate`);
+        setHeaders(response);
+        const type = request.body.submit,
+            { username } = request.body,
             id = await Controller.getUserId(username);
-        res.send(render(`/${type}/${id}`));
+        response.send(render(`/${type}/${id}`));
     });
 app.listen(PORT);

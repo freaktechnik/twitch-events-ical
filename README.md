@@ -1,6 +1,6 @@
 # twitch-events-ical
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/freaktechnik/twitch-events-ical.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.com/freaktechnik/twitch-events-ical.svg?branch=master)](https://travis-ci.com/freaktechnik/twitch-events-ical)
 
 Generates ical files for channels and followed channels of a user.

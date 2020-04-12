@@ -31,7 +31,7 @@
     "express": "^4.17.1",
     "immutable-ics": "^0.4.0",
     "redis": "^3.0.2",
-    "twitch": "^4.0.8"
+    "twitch": "^4.0.9"
   },
   "engines": {
     "node": ">= 10.3.0"

@@ -3,6 +3,8 @@
 
 [![Build Status](https://travis-ci.com/freaktechnik/twitch-events-ical.svg?branch=master)](https://travis-ci.com/freaktechnik/twitch-events-ical)
 
+> Broken due to Twitch removing the events API. There is no replacement on the horizon for the schedule feature. If that ever happens, I may build something similar again.
+
 Generates ical files for channels and followed channels of a user.
 
 ## Run
